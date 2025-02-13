@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Untukmu ❤️</title>
+    <link rel="icon" type="image/png" href="ipaaa cntk.jpg">
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+            color: red;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #ff1e50;
+        }
+        iframe {
+            margin-top: 20px;
+            border-radius: 12px;
+        }
+        .message-box {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ff4d6d;
+            resize: none;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .popup img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .popup button {
+            margin-top: 10px;
+            background: #ff4d6d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day! ❤️</h1>
+        <p>Untuk ipaaa, semoga hari ini penuh cinta dan kebahagiaan!</p>
+        <div class="heart">❤️</div>
+        <h2>Dan ini lagu buat kamu 🎶</h2>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1fDFHXcykq4iw8Gg7s5hG9?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+        <div class="message-box">
+            <h2>Kirim Pesan Buat aku 💌</h2>
+            <textarea id="userMessage" placeholder="Tulis pesan kamu di sini..."></textarea><br>
+            <button onclick="sendMessage()">Kirim</button>
+        </div>
+
+        <button onclick="showPopup()">Klik untuk Kejutan 🎁</button>
+    </div>
+    
+    <div id="popup" class="popup">
+        <h2>🎉 Kejutan Untukmu! 🎉</h2>
+        <img src="Gambar WhatsApp 2025-02-13 pukul 22.03.46_09224493.jpg" alt="Kejutan" />
+        <p>Aku sayang kamu! ❤️ Semoga harimu penuh kebahagiaan dan cinta!</p>
+        <p>🙏🥺 Maaf ya, aku cuma bisa kasih ini aja untuk sekarang, tapi aku harap kamu suka. 💖</p>
+        <button onclick="closePopup()">Tutup</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let message = document.getElementById('userMessage').value;
+            if (message.trim() === "") {
+                alert("Tulis dulu pesan kamu sebelum mengirim! ❤️");
+                return;
+            }
+            let encodedMessage = encodeURIComponent(message);
+            let phoneNumber = "6285810747693"; // Ganti dengan nomor WhatsApp kamu (format internasional, tanpa "+")
+            let whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappLink, '_blank');
+
+        }
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
